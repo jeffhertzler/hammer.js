@@ -295,7 +295,7 @@ var Utils = Hammer.utils = {
      * @param {Function} handler
      */
     on: function on(element, type, handler) {
-        element.addEventListener(type, handler, false);
+        element.addEventListener(type, handler, { passive: false, capture: false });
     },
 
     /**
@@ -306,7 +306,7 @@ var Utils = Hammer.utils = {
      * @param {Function} handler
      */
     off: function off(element, type, handler) {
-        element.removeEventListener(type, handler, false);
+        element.removeEventListener(type, handler, { passive: false, capture: false });
     },
 
     /**
